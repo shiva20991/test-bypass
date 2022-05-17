@@ -1,4 +1,4 @@
-FROM anasty17/mltb:latest
+FROM ghcr.io/kangershub/torrentleechx:latest
 
 RUN apt update && apt upgrade -y
 RUN apt-get install git -y
@@ -14,3 +14,8 @@ COPY config.env .
 COPY token.pickle .
 COPY start .
 CMD ["bash",  "start.sh"]
+
+
+
+
+
