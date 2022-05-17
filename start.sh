@@ -1,1 +1,6 @@
-python3 update.py && python3 -m bot
+if [[ -n $RCLONE_CONFIG ]]; then
+ echo "Rclone config detected"
+ echo -e "$RCLONE_CONFIG" > /app/rclone.conf
+fi
+
+bash setup.sh; python3 -m tobrot
