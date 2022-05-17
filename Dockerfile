@@ -10,6 +10,16 @@ COPY pextract /usr/local/bin
 RUN chmod +x /usr/local/bin/extract && chmod +x /usr/local/bin
 COPY .netrc /root/.netrc
 RUN pip3 install --no-cache-dir -r requirements.txt
+FROM ghcr.io/kangershub/torrentleechx:latest
+
+COPY . .
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+RUN chmod +x extract
+
+
+
 COPY config.env .
 COPY token.pickle .
 COPY start .
